@@ -1,0 +1,652 @@
+2020-12-17 21:04:28,034 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 3 hosts
+2020-12-17 21:04:33,074 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 942, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.11:22
+
+
+
+2020-12-17 21:04:33,074 - nornir.core.task -    ERROR -      start() - Host 'r3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 942, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.12:22
+
+
+
+2020-12-17 21:11:03,815 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 3 hosts
+2020-12-17 21:11:06,371 - nornir.core.task -    ERROR -      start() - Host 'r3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.99.99.12
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 942, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.99.99.12:22
+
+
+
+2020-12-17 21:29:28,339 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 3 hosts
+2020-12-17 21:29:31,717 - nornir.core.task -    ERROR -      start() - Host 'r3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 435, in connect
+    self._auth(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 764, in _auth
+    raise saved_exception
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 751, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\transport.py", line 1509, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+2020-12-17 21:31:29,341 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 3 hosts
+2020-12-17 21:31:32,535 - nornir.core.task -    ERROR -      start() - Host 'r3': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\connections\netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 435, in connect
+    self._auth(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 764, in _auth
+    raise saved_exception
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 751, in _auth
+    self._transport.auth_password(username, password)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\transport.py", line 1509, in auth_password
+    return self.auth_handler.wait_for_response(my_event)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\auth_handler.py", line 250, in wait_for_response
+    raise e
+paramiko.ssh_exception.AuthenticationException: Authentication failed.
+
+2020-12-17 21:33:45,958 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 3 hosts
+2020-12-17 21:37:30,397 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 4 hosts
+2020-12-17 21:37:58,383 - nornir.core.task -    ERROR -      start() - Host 'j1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\utilities.py", line 429, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1484, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 646, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-12-17 21:39:05,433 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 4 hosts
+2020-12-17 21:39:35,189 - nornir.core.task -    ERROR -      start() - Host 'j1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\utilities.py", line 429, in wrapper_decorator
+    return func(self, *args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1484, in send_command
+    new_data = self.read_until_pattern(pattern=re.escape(cmd))
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 646, in read_until_pattern
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+2020-12-17 21:43:27,018 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2020-12-17 21:45:23,579 -  nornir.core -  WARNING -        run() - Task 'netmiko_send_command' has not been run – 0 hosts selected
+2020-12-17 21:50:02,447 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ip int brief'} on 3 hosts
+2020-12-17 21:55:44,719 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'sh ver'} on 3 hosts
+2020-12-17 22:06:36,890 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface ge0/0', 'description {dconfig}']} on 3 hosts
+2020-12-17 22:06:58,408 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1670, in enable
+    output += self.read_until_prompt()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 642, in read_until_prompt
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 25, in netmiko_send_config
+    net_connect.enable()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco_base_connection.py", line 18, in enable
+    return super().enable(cmd=cmd, pattern=pattern, re_flags=re_flags)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1672, in enable
+    raise ValueError(msg)
+ValueError: Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler.
+
+2020-12-17 22:06:58,732 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1670, in enable
+    output += self.read_until_prompt()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 642, in read_until_prompt
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 25, in netmiko_send_config
+    net_connect.enable()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco_base_connection.py", line 18, in enable
+    return super().enable(cmd=cmd, pattern=pattern, re_flags=re_flags)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1672, in enable
+    raise ValueError(msg)
+ValueError: Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler.
+
+2020-12-17 22:07:27,616 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface gi0/0', 'description {dconfig}']} on 3 hosts
+2020-12-17 22:07:49,169 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1670, in enable
+    output += self.read_until_prompt()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 642, in read_until_prompt
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 25, in netmiko_send_config
+    net_connect.enable()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco_base_connection.py", line 18, in enable
+    return super().enable(cmd=cmd, pattern=pattern, re_flags=re_flags)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1672, in enable
+    raise ValueError(msg)
+ValueError: Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler.
+
+2020-12-17 22:07:49,184 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1670, in enable
+    output += self.read_until_prompt()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 642, in read_until_prompt
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 25, in netmiko_send_config
+    net_connect.enable()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco_base_connection.py", line 18, in enable
+    return super().enable(cmd=cmd, pattern=pattern, re_flags=re_flags)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1672, in enable
+    raise ValueError(msg)
+ValueError: Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler.
+
+2020-12-17 22:10:04,501 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface gi0/0', 'description {dconfig}']} on 3 hosts
+2020-12-17 22:10:26,114 - nornir.core.task -    ERROR -      start() - Host 'r2': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1670, in enable
+    output += self.read_until_prompt()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 642, in read_until_prompt
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 25, in netmiko_send_config
+    net_connect.enable()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco_base_connection.py", line 18, in enable
+    return super().enable(cmd=cmd, pattern=pattern, re_flags=re_flags)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1672, in enable
+    raise ValueError(msg)
+ValueError: Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler.
+
+2020-12-17 22:10:26,185 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 699, in recv
+    out = self.in_buffer.read(nbytes, self.timeout)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\buffered_pipe.py", line 164, in read
+    raise PipeTimeout()
+paramiko.buffered_pipe.PipeTimeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 569, in _read_channel_expect
+    new_data = self.remote_conn.recv(MAX_BUFFER)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\channel.py", line 701, in recv
+    raise socket.timeout()
+socket.timeout
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1670, in enable
+    output += self.read_until_prompt()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 642, in read_until_prompt
+    return self._read_channel_expect(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 579, in _read_channel_expect
+    raise NetmikoTimeoutException(
+netmiko.ssh_exception.NetmikoTimeoutException: Timed-out reading channel, data not available.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_netmiko\tasks\netmiko_send_config.py", line 25, in netmiko_send_config
+    net_connect.enable()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco_base_connection.py", line 18, in enable
+    return super().enable(cmd=cmd, pattern=pattern, re_flags=re_flags)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 1672, in enable
+    raise ValueError(msg)
+ValueError: Failed to enter enable mode. Please ensure you pass the 'secret' argument to ConnectHandler.
+
+2020-12-17 22:17:26,283 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface gi0/0', 'description {dconfig}']} on 3 hosts
+2020-12-17 22:18:47,396 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface gi0/0', 'description {d}']} on 3 hosts
+2020-12-17 22:19:19,553 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_config' with args {'config_commands': ['interface gi0/0', 'description Interface description set by nornir']} on 3 hosts
+2020-12-17 22:48:39,191 -  nornir.core -  WARNING -        run() - Task 'napalm_cli' has not been run – 0 hosts selected
+2020-12-17 22:49:14,979 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['sh ver', 'sh ip int brief']} on 1 hosts
+2020-12-17 22:50:06,135 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['sh ver', 'sh ip int brief']} on 1 hosts
+2020-12-17 22:50:11,241 - nornir.core.task -    ERROR -      start() - Host 'devxe1': task 'napalm_cli' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 349, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\util.py", line 283, in retry_on_signal
+    return function()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 349, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\napalm\base\base.py", line 86, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 942, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios ios-xe-mgmt.cisco.com:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_napalm\plugins\tasks\napalm_cli.py", line 19, in napalm_cli
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\napalm\ios\ios.py", line 169, in open
+    self.device = self._netmiko_open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\napalm\base\base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to ios-xe-mgmt.cisco.com
+
+2020-12-17 22:52:35,067 -  nornir.core -     INFO -        run() - Running task 'napalm_cli' with args {'commands': ['sh ver', 'sh ip int brief']} on 1 hosts
+2020-12-17 23:01:26,117 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['interfaces']} on 2 hosts
+2020-12-17 23:01:26,241 - nornir.core.task -    ERROR -      start() - Host 'devxe2': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 920, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 340, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\paramiko\client.py", line 203, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\napalm\base\base.py", line 86, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\ssh_dispatcher.py", line 312, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\cisco\cisco_ios.py", line 17, in __init__
+    return super().__init__(*args, **kwargs)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 346, in __init__
+    self._open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 351, in _open
+    self.establish_connection()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\netmiko\base_connection.py", line 942, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.ssh_exception.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios ios-xe-mgmt.latest.cisco.com:8181
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\task.py", line 98, in start
+    r = self.task(self, **self.params)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_napalm\plugins\tasks\napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 440, in get_connection
+    self.open_connection(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir\core\inventory.py", line 492, in open_connection
+    conn_obj.open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\nornir_napalm\plugins\connections\__init__.py", line 57, in open
+    connection.open()
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\napalm\ios\ios.py", line 169, in open
+    self.device = self._netmiko_open(
+  File "C:\Users\sntuser\AppData\Local\Programs\Python\Python39\lib\site-packages\napalm\base\base.py", line 95, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to ios-xe-mgmt.latest.cisco.com
+

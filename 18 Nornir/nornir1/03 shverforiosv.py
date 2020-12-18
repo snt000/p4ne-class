@@ -1,15 +1,12 @@
 from nornir import InitNornir
-
+from nornir.core.filter import F
 from nornir_utils.plugins.functions import print_result
 from nornir_netmiko import netmiko_send_command
 
-from nornir.core.filter import F
-
 nr = InitNornir(config_file="config.yml")
 
-Router = nr.filter(F(groups__contains="CSSHGO"))
+rtrs = nr.filter((F(groups__contains="iosv")))
 
-result = Router.run(netmiko_send_command, command_string="sh ip int brief")
-
+result = rtrs.run(netmiko_send_command, command_string="sh ver")
 print_result(result)
 

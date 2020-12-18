@@ -1,34 +1,21 @@
 ## Nornir Groups File 
 ---
-CSR_Routers: 
+iosv: 
 
   data: 
     ntp: 
       servers: 
         - 1.1.1.1
 
-CSR:
+juniper:
 
-  data: 
-    ntp:
-      servers:
-        - 2.2.2.2
+  platform: junos
+  username: steve 
+  password: root123
 
-ASAv:
-  
-  platform: cisco_asa
-  username: roger
-  password: cisco
+zebras: {}
 
-CSSHGO:
+devnet:
 
-  username: admin 
-  password: admin
-
-  data: 
-    ntp: 
-      servers:
-        - 3.3.3.3
-
-
-
+  username: developer
+  password: C1sco12345

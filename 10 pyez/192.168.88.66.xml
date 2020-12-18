@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><rpc-reply message-id="urn:uuid:73867cf5-2ffc-4e54-a439-d8f8414eaf46">
+<data>
+<configuration commit-seconds="1507661568" commit-localtime="2017-10-10 18:52:48 UTC" commit-user="lab">
+    <version>12.1I0 [hhuang]</version>
+    <system>
+        <root-authentication>
+            <encrypted-password>$1$iM14/iCc$dQWLjtS/juOS9Ns48gmQR.</encrypted-password>
+        </root-authentication>
+        <login>
+            <message>this is my login banner which contains a multiline</message>
+            <user>
+                <name>alex</name>
+                <uid>2002</uid>
+                <class>super-user</class>
+                <authentication>
+                    <encrypted-password>$1$VkHK9kjD$2mEws0LICISgxaPRlOglQ.</encrypted-password>
+                    <ssh-rsa>
+                        <name>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCl+LYrRi0uv5r+Yf7TcI2w2swk4l4g/SfqIe2fN5bxsOXZdLa+UETt4NzLwfQy1lkgANLWPtTX91LOT0CPQWYh0Y/Jviphs5jEpWDqF0zFtFuK/VqhExIlGLhLN1ZdGbUMh+IF9MAg0BbdXj2nEqo5UHDmbRd6e0ZxVKcr/7Q0ujxWs9AW2aWi76SOyvInJCWaUa+Ugd79s0Pdg6akWff/oexHnCyysbJqUKcZ3a/mHBENrrbPq5Hf2qiBGZ0ZuzeMoaxYM0u9KYUDkerNupnRu9CoDD+tBJizLN5qSc/fjBD1FNTKF7U12uLDBZHlIzuSF9TQb+1uQ5HqsoJWA3yN alex@gns3vm</name>
+                    </ssh-rsa>
+                </authentication>
+            </user>
+            <user>
+                <name>lab</name>
+                <uid>2001</uid>
+                <class>super-user</class>
+                <authentication>
+                    <encrypted-password>$1$fRuVFSO7$M2PDeroJ6ho2w3YfMBNxE/</encrypted-password>
+                    <ssh-rsa>
+                        <name>ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDULT6BLdQKC3iLUd/4Hbj7pS1YYRihzqLJ80tjIKPndBEAKMq8eP6nMvjlrh8+5FJtdk1C8hdJ3Xnq7uzwy6T0asNQl70TikZOJF/oQnoP1DZSZgBEc8Nr7s+XGv7NYDylhUfhqL4NdB56JrIOJttl3UC920RkHFvHB34QVwc04GChjhTjuOjl6jQWBKsILMe6s26OQJR7b3bHaUSwIGOhY5wd/CuiaufbWXX3HnZ9MaQgdNT8J2VawSJQNR46P6MSShqVCsvzPvdqAkTjuhSpA0tvlIM6DvZLs63MvOgMoEQkq7ZHUg1deu626+2kG4osSZFSGT/GJ4d7dbzWBvJl root@localhost.localdomain</name>
+                    </ssh-rsa>
+                </authentication>
+            </user>
+        </login>
+        <services>
+            <ssh>
+                <max-sessions-per-connection>32</max-sessions-per-connection>
+            </ssh>
+            <netconf>
+                <ssh>
+                    <port>830</port>
+                </ssh>
+            </netconf>
+        </services>
+    </system>
+    <interfaces>
+        <interface>
+            <name>ge-0/0/0</name>
+            <description>Connection to the LAB environment</description>
+            <unit>
+                <name>0</name>
+                <family>
+                    <inet>
+                        <address>
+                            <name>192.168.88.66/24</name>
+                        </address>
+                    </inet>
+                </family>
+            </unit>
+        </interface>
+        <interface>
+            <name>ge-0/0/2</name>
+            <vlan-tagging/>
+            <encapsulation>flexible-ethernet-services</encapsulation>
+        </interface>
+    </interfaces>
+    <routing-options>
+        <static>
+            <route>
+                <name>0.0.0.0/0</name>
+                <next-hop>192.168.88.1</next-hop>
+            </route>
+        </static>
+    </routing-options>
+    <protocols>
+        <lldp>
+            <interface>
+                <name>all</name>
+            </interface>
+        </lldp>
+    </protocols>
+    <security>
+        <forwarding-options>
+            <family>
+                <inet6>
+                    <mode>packet-based</mode>
+                </inet6>
+                <mpls>
+                    <mode>packet-based</mode>
+                </mpls>
+                <iso>
+                    <mode>packet-based</mode>
+                </iso>
+            </family>
+        </forwarding-options>
+    </security>
+</configuration>
+</data>
+</rpc-reply>

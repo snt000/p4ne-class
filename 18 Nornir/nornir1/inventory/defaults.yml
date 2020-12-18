@@ -3,3 +3,7 @@
 platform: ios
 username: cisco 
 password: cisco 
+connection_options:
+  netmiko:
+    extras:
+      secret: cisco
