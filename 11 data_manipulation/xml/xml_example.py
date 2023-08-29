@@ -30,6 +30,7 @@ SOFTWARE.
 import xmltodict
 
 # Open the sample xml file and read it into variable
+#with open("./11 data_manipluation/xml/xml_example.xml") as f:
 with open("xml_example.xml") as f:
     xml_example = f.read()
 

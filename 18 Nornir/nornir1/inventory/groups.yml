@@ -10,12 +10,12 @@ iosv:
 juniper:
 
   platform: junos
-  username: steve 
-  password: root123
+  username: sntuser 
+  password: Ilovenetworks99
 
-zebras: {}
+ios: {}
 
 devnet:
 
-  username: developer
+  username: admin
   password: C1sco12345

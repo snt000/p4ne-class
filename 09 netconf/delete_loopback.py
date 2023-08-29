@@ -49,9 +49,9 @@ IETF_INTERFACE_TYPES = {
 
 # Create an XML configuration template for ietf-interfaces
 netconf_interface_template = """
-<config>
+<config xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
     <interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
-        <interface operation="delete">
+        <interface operation="222delete">
         	<name>{name}</name>
         </interface>
     </interfaces>

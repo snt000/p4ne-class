@@ -58,11 +58,11 @@ print(r.text)
 
 if r.status_code == 200:
     # Process JSON data into Python Dictionary and use
-    interface = r.json()["ietf-interfaces:interface"]
+    interface = r.json() ["ietf-interfaces:interface"]
     print("The interface {name} has ip address {ip}/{mask}".format(
-            name = interface["name"],
-            ip = interface["ietf-ip:ipv4"]["address"][0]["ip"],
-            mask = interface["ietf-ip:ipv4"]["address"][0]["netmask"],
+            name = interface[0]["name"],
+            ip = interface[0]["ietf-ip:ipv4"]["address"][0]["ip"],
+            mask = interface[0]["ietf-ip:ipv4"]["address"][0]["netmask"],
             )
         )
 else:

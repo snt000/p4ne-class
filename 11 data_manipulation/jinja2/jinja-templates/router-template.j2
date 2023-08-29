@@ -1,0 +1,10 @@
+service password-encryption
+cdp enable
+hostname {{hostname}}
+!
+router bgp {{localasn}}
+ neighbor {{bgp_neighbor}} remote-as {{remote_asn}}
+!
+ address-family ipv4
+  neighbor {{bgp_neighbor}} activate
+exit-address-family

@@ -34,7 +34,8 @@ with open("yaml_example.yaml") as f:
 print(yaml_example)
 
 # Parse the yaml into a Python dictionary
-yaml_dict = yaml.load(yaml_example)
+#yaml_dict = yaml.load(yaml_example)
+yaml_dict = yaml.full_load(yaml_example)
 
 # Save the interface name into a variable
 int_name = yaml_dict["interface"]["name"]

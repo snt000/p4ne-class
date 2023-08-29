@@ -33,4 +33,4 @@ time.sleep(1)
 output = remote_connection.recv(65535)
 print output
 
-ssh_client.close
+ssh_client.close()

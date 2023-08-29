@@ -15,9 +15,10 @@ if password:
 
 
 tn.write(b"enable\n")
-if password:
-    tn.read_until(b"Password: ")
-    tn.write(password.encode('ascii') + b"\n")
+#if password:
+#    tn.read_until(b"Password: ")
+#    tn.write(password.encode('ascii') + b"\n")
+tn.write(b"cisco\n")
 tn.write(b"terminal length 0\n")
 tn.write(b"sh run\n")
 tn.write(b"exit\n")

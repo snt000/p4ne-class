@@ -31,14 +31,32 @@ __license__ = "MIT"
 
 # DevNet Always-On NETCONF/YANG & RESTCONF Sandbox Device
 # https://devnetsandbox.cisco.com/RM/Diagram/Index/27d9747a-db48-4565-8d44-df318fce37ad?diagramType=Topology
+
+#ios_xe1 = {
+ #       "address": "sandbox-iosxe-recomm-1.cisco.com",
+  #      "username": "developer",
+   #     "password": "C1sco12345",
+    #    "netconf_port": 830,
+     #   "restconf_port": 443,
+      #  "ssh_port": 22
+#}
 ios_xe1 = {
-             "address": "ios-xe-mgmt.cisco.com",
-             "netconf_port": 10000,
-             "restconf_port": 9443,
-             "ssh_port": 8181,
-             "username": "root",
-             "password": "D_Vay!_10&"
-          }
+        "address": "sandbox-iosxe-latest-1.cisco.com",
+        "username": "admin",
+        "password": "C1sco12345",
+        "netconf_port": 830,
+        "restconf_port": 443,
+        "ssh_port": 22
+}
+
+#ios_xe1 = {
+#             "address": "ios-xe-mgmt.cisco.com",
+#             "netconf_port": 10000,
+#             "restconf_port": 9443,
+#             "ssh_port": 8181,
+#             "username": "root",
+#             "password": "D_Vay!_10&"
+#          }
 
 # Vagrant option - Uncomment the below if using Vagrant IOS XE Device
 vagrant_iosxe = {

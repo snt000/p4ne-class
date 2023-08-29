@@ -54,15 +54,24 @@ if ENVIRONMENT_IN_USE == "sandbox":
     }
 
     # Values for the Always On IOS XE Sandbox
+    #IOS_XE_1 = {
+     #   "host": "sandbox-iosxe-recomm-1.cisco.com",
+      #  "username": "developer",
+       # "password": "C1sco12345",
+        #"netconf_port": 830,
+        #"restconf_port": 443,
+        #"ssh_port": 22
+    #}
+    
     IOS_XE_1 = {
-        "host": "ios-xe-mgmt.cisco.com",
-        "username": "developer",
+        "host": "sandbox-iosxe-latest-1.cisco.com",
+        "username": "admin",
         "password": "C1sco12345",
-        "netconf_port": 10000,
-        "restconf_port": 9443,
-        "ssh_port": 8181
+        "netconf_port": 830,
+        "restconf_port": 443,
+        "ssh_port": 22
     }
-
+    
     # Values for the Reservable IOS XE Sandbox
     IOS_XE_2 = {
         "host": "10.10.20.48",
@@ -101,14 +110,14 @@ elif ENVIRONMENT_IN_USE == "express":
 
     # Values for the CSR1 from the dCloud Pod
     IOS_XE_1 = {
-        "host": "198.18.134.11",
-        "username": "admin",
+        "host": "sandbox-iosxe-recomm-1.cisco.com",
+        "username": "developer",
         "password": "C1sco12345",
         "netconf_port": 830,
         "restconf_port": 443,
         "ssh_port": 22
     }
-
+    
     # Values for the CSR2 from the dCloud Pod
     IOS_XE_2 = {
         "host": "198.18.134.12",

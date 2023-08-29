@@ -2,11 +2,11 @@ from jnpr.junos import Device
 from jnpr.junos.utils.config import Config
 from getpass import getpass
 
-pwd = getpass()
-ip_addr = input("Enter Juniper IP: ")
-ip_addr = ip_addr.strip()
+pwd = "Ilovenetworks99"
+ip_addr = "10.5.5.4"
+#ip_addr = ip_addr.strip()
 
-juniper1 = {"host": ip_addr, "user": "steve", "password": pwd}
+juniper1 = {"host": ip_addr, "user": "sntuser", "password": pwd}
 
 print ("\n\nConnecting to Juniper...\n")
 a_device = Device(**juniper1)

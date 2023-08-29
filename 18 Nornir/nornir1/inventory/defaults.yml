@@ -1,8 +1,8 @@
 ## Nornir Defaults File 
 ---
 platform: ios
-username: cisco 
-password: cisco 
+username: sntuser 
+password: Ilovenetworks99
 connection_options:
   netmiko:
     extras:

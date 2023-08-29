@@ -1,0 +1,36 @@
+# Nornir Hosts File 
+---
+r1: 
+  hostname: 10.99.99.11 
+  username: sntuser
+  groups: 
+    - ios
+  data:
+    interfaces: {"lo1": "1.1.1.1", "lo2": "1.1.1.2"}
+  connection_options:
+    napalm:
+      extras:
+        optional_args:
+          secret: cisco
+
+r2: 
+  hostname: 10.99.99.12
+  groups: 
+    - ios
+
+r3: 
+  hostname: 10.99.99.13
+  groups: 
+    - ios
+
+r4: 
+  hostname: 10.99.99.14
+  groups: 
+    - iosv
+
+devxe1:
+  hostname: sandbox-iosxe-recomm-1.cisco.com
+  platform: ios
+  port: 22
+  groups:
+    - devnet
